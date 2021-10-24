@@ -70,7 +70,7 @@ steps = size(priceTree,2)-1;
 for idx = steps:-1:1
     optionTree(1:idx,idx) = discount*(p*optionTree(1:idx,idx+1) ...
         + (1-p)*optionTree(2:idx+1,idx+1));
-    % Barrier option
+    % Barrier option crtitcal condition
      optionTree((priceTree(:,idx) < X),idx) = 0;
     
 end
